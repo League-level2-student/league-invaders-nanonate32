@@ -17,7 +17,8 @@ public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	System.out.println("Hello");
 	void startGame(){
-		Timer timer();
+		Timer timer = new Timer();
+		timer.setVisible();
 }
 	}
 
