@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class gamePanel extends JPanel implements ActionListener {
-	public gamePanel(
+	public gamePanel(timer(60,100));
 		// TODO Auto-generated constructor stub
 
 	}
