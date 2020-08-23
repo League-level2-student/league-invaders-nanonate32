@@ -5,21 +5,24 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
 public class gamePanel extends JPanel implements ActionListener {
-	public gamePanel(timer(60,100));
+	  public gamePanel() {
+		timer = new Timer(1000/60,this);
+	  }
+	  Timer timer;
 		// TODO Auto-generated constructor stub
-
-	}
+        
+	
 
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	System.out.println("Hello");
-	void startGame(){
-		Timer timer = new Timer();
-		timer.setVisible();
 }
-	}
+	void startGame(){
+	timer.start();	
+		
+}
+}	
 
 
