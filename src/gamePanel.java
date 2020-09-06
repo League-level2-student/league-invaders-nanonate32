@@ -11,7 +11,7 @@ public class gamePanel extends JPanel implements ActionListener {
 	  }
 	  Timer timer;
 		// TODO Auto-generated constructor stub
-        
+        public vod mainCOmponent(Graphics g)
 	
 
 @Override

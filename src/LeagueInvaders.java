@@ -12,7 +12,8 @@ public class LeagueInvaders {
 	public LeagueInvaders(){
     game = new gamePanel();
     final int WIDTH = 500;
-final int HEIGHT = 800;
+    final int HEIGHT = 800;
+    
     frame.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
      
     frame.pack();
