@@ -6,13 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class LeagueInvaders {
+	public final static int HEIGHT = 800;
+	public final static int WIDTH = 500;
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	gamePanel game;
 	public LeagueInvaders(){
     game = new gamePanel();
-    final int WIDTH = 500;
-    final int HEIGHT = 800;
+ 
+    
     
     frame.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
      
