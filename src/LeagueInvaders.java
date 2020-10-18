@@ -37,5 +37,7 @@ public static void main(String[] args) {
     	game.startGame();
     	game.createImage(producer)
     	game.createImage(blue);
+    	colorMenu(blue)\
+    	color(blue);
 }
 }

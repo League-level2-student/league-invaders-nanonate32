@@ -83,6 +83,7 @@ public void actionPerformed(ActionEvent e) {
 	 void drawEndState(Graphics g)  { 
 		 g.setColor(Color.RED);
 		 g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		 positon(100,100)
 	 }
 }	
 
