@@ -14,10 +14,10 @@ public class LeagueInvaders {
 	public LeagueInvaders(){
     game = new gamePanel();
  
-    
-    
+    frame.addKeyListener(game);
+    frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
     frame.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
-     
+    
     frame.pack();
 
 	}
@@ -35,9 +35,6 @@ public static void main(String[] args) {
     	frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
     	frame.pack();
     	game.startGame();
-    	game.createImage(producer)
-    	game.createImage(blue);
-    	colorMenu(blue)\
-    	color(blue);
+    	
 }
 }
