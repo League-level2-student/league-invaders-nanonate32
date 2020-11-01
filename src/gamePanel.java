@@ -11,6 +11,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 public class gamePanel extends JPanel implements ActionListener, KeyListener{
+	rocketShip rocket; 
 	final int MENU = 0;
     final int GAME = 1;
     final int END = 2;
@@ -18,6 +19,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
     Font menuFont;
     int currentState = MENU;
 	  public gamePanel() {
+		  rocket = new rocketShip(250,700,50,50);
 		  titleFont = new Font("Arial", Font.PLAIN, 48);
 		  menuFont = new Font("Arial", Font.PLAIN, 24);
 		frameDraw = new Timer(1000/60,this);
@@ -79,16 +81,25 @@ public void actionPerformed(ActionEvent e) {
 		}
 		if(currentState == GAME) {
 		if (e.getKeyCode()==KeyEvent.VK_UP) {
-		    System.out.println("UP");
+		    if(rocket.y > 0) {
+		    	rocket.up();
+		    }
+		     
 		}
 		if (e.getKeyCode()==KeyEvent.VK_DOWN) {
 		    System.out.println("DOWN");
+		    if(rocket.y<(LeagueInvaders.HEIGHT- rocket.height))
+		    rocket.down();
 		}
 		if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
 		    System.out.println("RIGHT");
+		    if(rocket.x<(LeagueInvaders.WIDTH- rocket.width))
+		    rocket.right();
 		}
 		if (e.getKeyCode()==KeyEvent.VK_LEFT) {
 		    System.out.println("LEFT");
+		    if(rocket.x>0)
+		    rocket.left();
 		}
 		}
 		
@@ -117,6 +128,7 @@ public void actionPerformed(ActionEvent e) {
 	 void drawGameState(Graphics g) {
 		 g.setColor(Color.BLACK);
 		 g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		 rocket.draw(g);
 	 }
 	 void drawEndState(Graphics g)  { 
 		 g.setColor(Color.RED);
