@@ -1,9 +1,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class rocketShip extends GameObject {
+public class RocketShip extends GameObject {
 
-	rocketShip(int x, int y, int width, int height) {
+	RocketShip(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 	}

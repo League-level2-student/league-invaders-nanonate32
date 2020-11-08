@@ -10,9 +10,9 @@ public class LeagueInvaders {
 	public final static int WIDTH = 500;
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	gamePanel game;
+	GamePanel game;
 	public LeagueInvaders(){
-    game = new gamePanel();
+    game = new GamePanel();
  
     frame.addKeyListener(game);
     frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);

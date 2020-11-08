@@ -10,16 +10,16 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
-public class gamePanel extends JPanel implements ActionListener, KeyListener{
-	rocketShip rocket; 
+public class GamePanel extends JPanel implements ActionListener, KeyListener{
+	RocketShip rocket; 
 	final int MENU = 0;
     final int GAME = 1;
     final int END = 2;
     Font titleFont;
     Font menuFont;
     int currentState = MENU;
-	  public gamePanel() {
-		  rocket = new rocketShip(250,700,50,50);
+	  public GamePanel() {
+		  rocket = new RocketShip(250,700,50,50);
 		  titleFont = new Font("Arial", Font.PLAIN, 48);
 		  menuFont = new Font("Arial", Font.PLAIN, 24);
 		frameDraw = new Timer(1000/60,this);
