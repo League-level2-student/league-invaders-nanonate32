@@ -7,10 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 public class GamePanel extends JPanel implements ActionListener, KeyListener{
+	public static BufferedImage image;
+	public static boolean needImage = true;
+	public static boolean gotImage = false;	
 	ObjectManager manager;
 	RocketShip rocket; 
 	final int MENU = 0;
@@ -20,6 +25,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     Font menuFont;
     int currentState = MENU;
 	  public GamePanel() {
+		  if (needImage) {
+			    loadImage ("space.png");
+			}
+
 		  rocket = new RocketShip(250,700,50,50);
 		  manager = new ObjectManager(rocket);
 		  titleFont = new Font("Arial", Font.PLAIN, 48);
@@ -29,6 +38,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	  }
 	  Timer frameDraw;
 		// TODO Auto-generated constructor stub
+	  void loadImage(String imageFile) {
+		    if (needImage) {
+		        try {
+		            image = ImageIO.read(this.getClass().getResourceAsStream(imageFile));
+			    gotImage = true;
+		        } catch (Exception e) {
+		            
+		        }
+		        needImage = false;
+		    }
+		}
         public void paintComponent(Graphics g) {
         	if(currentState == MENU){
         	    drawMenuState(g);
@@ -130,7 +150,7 @@ public void actionPerformed(ActionEvent e) {
 		 
 	 }
 	 void drawGameState(Graphics g) {
-		g.drawImage("space.png");
+		g.drawImage(image,0,0,LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT,null);
 		manager.draw(g);
 	 }
 	 void drawEndState(Graphics g)  { 

@@ -1,10 +1,11 @@
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.List;
 
 public class ObjectManager {
 	RocketShip rocket;
-	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
+	List<Projectile> projectiles = new ArrayList<Projectile>();
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
 	Random random = new Random();
 
