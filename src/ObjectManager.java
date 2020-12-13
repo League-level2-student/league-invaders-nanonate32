@@ -20,7 +20,7 @@ public class ObjectManager implements ActionListener {
 		projectiles.add(projectile);
 	}
 
-	void addAlien(Alien alien) {
+	void addAlien() {
 		aliens.add(new Alien(random.nextInt(LeagueInvaders.WIDTH), 0, 50, 50));
 	}
 
@@ -58,8 +58,10 @@ public class ObjectManager implements ActionListener {
 				aliens.remove(i);
 
 			}
+			
 
 		}
+		
 	for (int i = 0; i < projectiles.size(); i++) {
 			
 			if (projectiles.get(i).isActive == false) {
@@ -73,6 +75,7 @@ public class ObjectManager implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		addAlien(Alien);
+		addAlien();
 	}
-}
+	
+} 

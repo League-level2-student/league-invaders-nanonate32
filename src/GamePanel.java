@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     Font titleFont;
     Font menuFont;
     int currentState = MENU;
+    Timer alienSpawn;
 	  public GamePanel() {
 		  if (needImage) {
 			    loadImage ("space.png");
@@ -76,7 +77,8 @@ public void actionPerformed(ActionEvent e) {
     repaint();
 }
 	void startGame(){
-		
+		  alienSpawn = new Timer(1000 , ObjectManager);
+		    alienSpawn.start();
 	
 	
 }
