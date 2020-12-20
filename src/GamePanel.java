@@ -77,7 +77,7 @@ public void actionPerformed(ActionEvent e) {
     repaint();
 }
 	void startGame(){
-		  alienSpawn = new Timer(1000 , ObjectManager);
+		  alienSpawn = new Timer(1000 , manager);
 		    alienSpawn.start();
 	
 	
@@ -99,16 +99,22 @@ public void actionPerformed(ActionEvent e) {
 			System.out.println("Enter");
 		    if (currentState == END) {
 		        currentState = MENU;
+		        alienSpawn.stop();
 		    } else {
 		        currentState++;
+		       
 		    }
 		}
 		if(currentState == GAME) {
+			startGame();
 		if (e.getKeyCode()==KeyEvent.VK_UP) {
 		    if(rocket.y > 0) {
 		    	rocket.up();
 		    }
 		     
+		}
+		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+			manager.addProjectile(rocket.getProjectile());
 		}
 		if (e.getKeyCode()==KeyEvent.VK_DOWN) {
 		    System.out.println("DOWN");
@@ -138,6 +144,9 @@ public void actionPerformed(ActionEvent e) {
 	void updateMenuState() {  }
 	 void updateGameState() {
 		 manager.update();
+		 if(rocket.isActive == false) {
+			 currentState = END;
+		 }
 	 }
 	 void updateEndState()  {  }
 	 void drawMenuState(Graphics g) { 
