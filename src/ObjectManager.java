@@ -6,10 +6,12 @@ import java.util.Random;
 import java.util.List;
 
 public class ObjectManager implements ActionListener {
-	;
+
 	RocketShip rocket;
+	int score = 0;
 	List<Projectile> projectiles = new ArrayList<Projectile>();
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
+	
 	Random random = new Random();
 
 	ObjectManager(RocketShip rocket) {
@@ -39,6 +41,7 @@ public class ObjectManager implements ActionListener {
 				projectiles.get(i).isActive = false;
 			}
 		}
+		rocket.update();
       checkCollision();
       purgeObjects();
 	}
@@ -77,6 +80,7 @@ public class ObjectManager implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		addAlien();
+		
 	}
 
 	void checkCollision() {
@@ -89,9 +93,14 @@ public class ObjectManager implements ActionListener {
 				if (projectiles.get(j).collisionBox.intersects(aliens.get(i).collisionBox)) {
                    projectiles.get(j).isActive = false;
                    aliens.get(i).isActive = false;
+                   score++;
 				}
 				
 			}
 		}
 	}
+	public int getScore() {
+	return score;	
+	}
+	
 }

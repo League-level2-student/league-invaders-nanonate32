@@ -34,7 +34,7 @@ public static void main(String[] args) {
     	frame.setVisible(true);
     	frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
     	frame.pack();
-    	game.startGame();
+    	
     	
 }
 }
