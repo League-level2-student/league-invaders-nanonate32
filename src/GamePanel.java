@@ -32,11 +32,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	public GamePanel() {
 		if (needImage) {
 			loadImage("space.png");
-			
+		
 			
 			
 		}
-
+			
 		rocket = new RocketShip(250, 700, 50, 50);
 		manager = new ObjectManager(rocket);
 		titleFont = new Font("Arial", Font.PLAIN, 48);
@@ -106,10 +106,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		// TODO Auto-generated method stub
 
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			System.out.println("Enter");
+			
 			if (currentState == END) {
 				currentState = MENU;
 				alienSpawn.stop();
+				
 
 			} else if (currentState == MENU) {
 				startGame();
@@ -186,6 +187,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	void drawGameState(Graphics g) {
 		g.drawImage(image, 0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT, null);
 		manager.draw(g);
+		g.drawString("score:" + manager.getScore() , 100, 100);
 	}
 
 	void drawEndState(Graphics g) {
